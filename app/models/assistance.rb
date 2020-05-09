@@ -4,6 +4,8 @@ class Assistance < ActiveRecord::Base
     belongs_to :employee
     belongs_to :company
 
+ validates_presence_of :hora1,:hora2,:fecha,:hora_efectivo,:hora_efectivo2,:employee_id,:inasist_id
+
 
   
     def self.import(file)
@@ -23,8 +25,6 @@ class Assistance < ActiveRecord::Base
     #       	puts row['fecha'] 
     puts "fecha ==> "
     puts row['fecha']
-
-
 
             Assistance.create! row.to_hash 
 

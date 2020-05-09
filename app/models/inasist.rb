@@ -16,7 +16,6 @@ class Inasist < ActiveRecord::Base
 
         for detalle in @detalle
 
-
           if detalle.inasist_id == 4  
  
                    fecha_hora = fecha1
@@ -96,7 +95,6 @@ class Inasist < ActiveRecord::Base
 
       ret = 0
 
-
       a = fecha1.in_time_zone.change( hour: 8 ,  min: 00 )     
       b = fecha2.in_time_zone.change( hour: 18 , min: 30 )     
 
@@ -106,6 +104,7 @@ class Inasist < ActiveRecord::Base
 
           hora1 =  a.hora_efectivo::time 
           hora2 =  a.hora_efectivo2::time 
+
 puts "asssssssssssssssssssssssssssssssssss"
 
             puts hora1

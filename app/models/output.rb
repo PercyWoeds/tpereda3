@@ -46,13 +46,15 @@ class Output < ActiveRecord::Base
                      "TOTAL"]
 
    TABLE_HEADERS4 = ["ITEM",
+    
+                      "CATEGORIA",
                       "DOCUMENTO",
                      "FECHA",
                      "CODE",
                      "PRODUCTO",
                      "UNIDAD",
                      "UBICACION",
-                     "EMPLEADO",
+                  
                      "PLACA",
                      "CANTIDAD",
                      "STOCK

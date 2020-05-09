@@ -17,13 +17,16 @@ module Mnygo
     config.encoding = "utf-8"
     config.assets.initialize_on_precompile = false
     config.serve_static_files = true
-    
+
+
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
     config.time_zone ='Lima'
     config.exceptions = self.routes
     config.enable_dependency_loading= true
-    config.autoload_paths << Rails.root.join('lib')
+    #config.autoload_paths << Rails.root.join('lib')
+
+    config.eager_load_paths += %W(#{Rails.root}/lib)
     
   end
 

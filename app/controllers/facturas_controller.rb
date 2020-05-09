@@ -135,6 +135,7 @@ class FacturasController < ApplicationController
  
             row = []         
             row << nroitem.to_s
+            row << product.products_category.name 
             row << product.code
             row << product.fecha.strftime("%d/%m/%Y")
             row << product.codigo
@@ -285,11 +286,12 @@ class FacturasController < ApplicationController
     @facturas_rpt = @company.get_salidas_day0(@fecha1,@fecha2)
 
 
-    Prawn::Document.generate("app/pdf_output/rpt_factura.pdf") do |pdf|
+    Prawn::Document.generate "app/pdf_output/rpt_factura.pdf" , :page_layout => :landscape  do |pdf|
+
         pdf.font "Helvetica"
-        pdf = build_pdf_header_rpt9(pdf)
-        pdf = build_pdf_body_rpt9(pdf)
-        build_pdf_footer_rpt9(pdf)
+        pdf = build_pdf_header_rpt91(pdf)
+        pdf = build_pdf_body_rpt91(pdf)
+        build_pdf_footer_rpt91(pdf)
         $lcFileName =  "app/pdf_output/rpt_factura.pdf"              
     end     
     $lcFileName1=File.expand_path('../../../', __FILE__)+ "/"+$lcFileName              
@@ -297,7 +299,7 @@ class FacturasController < ApplicationController
 
   end
 
-  def build_pdf_header_rpt9(pdf)
+  def build_pdf_header_rpt91(pdf)
       pdf.font "Helvetica" , :size => 8
      $lcCli  =  @company.name 
      $lcdir1 = @company.address1+@company.address2+@company.city+@company.state
@@ -330,7 +332,7 @@ class FacturasController < ApplicationController
       pdf 
   end   
 
-  def build_pdf_body_rpt9(pdf)
+  def build_pdf_body_rpt91(pdf)
     
     pdf.text "Listado de Salidas desde "+@fecha1.to_s+ " Hasta: "+@fecha2.to_s , :size => 8 
   
@@ -359,6 +361,7 @@ class FacturasController < ApplicationController
  
             row = []         
             row << nroitem.to_s
+            row << product.get_categoria(product.id)
             row << product.code
             row << product.fecha.strftime("%d/%m/%Y")
             row << product.codigo
@@ -366,7 +369,7 @@ class FacturasController < ApplicationController
             row << product.unidad 
             row << product.supplier.name
             #if product.employee.full_name.nil?
-              row << ""    
+            # row << ""    
             #else 
              # row << product.employee.full_name 
             #end
@@ -419,10 +422,21 @@ class FacturasController < ApplicationController
                                           columns([2]).align=:left
                                           columns([3]).align=:left
                                           columns([4]).align=:left
-                                          columns([5]).align=:center  
+                                        
+                                          columns([5]).align=:left
+                                          columns([5]).width= 120
                                           columns([6]).align=:right
                                           columns([7]).align=:right
                                           columns([8]).align=:right
+                                          columns([9]).align=:right
+                                          columns([9]).width= 50
+                                          columns([10]).align=:right
+                                          columns([10]).width= 50
+                                          columns([11]).align=:right
+                                          columns([11]).width= 50
+                                          columns([12]).align=:right
+                                          columns([12]).width= 50
+
                                         end                                          
       pdf.move_down 10      
       #totales 
@@ -430,7 +444,7 @@ class FacturasController < ApplicationController
 
     end
 
-    def build_pdf_footer_rpt9(pdf)
+    def build_pdf_footer_rpt91(pdf)
             data =[ ["Procesado por Almacen ","V.B.Almacen","V.B.Compras ","V.B. Gerente ."],
                [":",":",":",":"],
                [":",":",":",":"],
