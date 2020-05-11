@@ -320,6 +320,11 @@ def get_facturas_day_value_cliente(fecha1,fecha2,cliente,value = "total",moneda)
      return employees
   end
       
+  def get_employees0()
+     employees =  Employee.where(:active => "1").order(:lastname)
+     return employees
+  end
+      
   def get_empsubs()
      empsubs = Subcontrat.all 
      return empsubs

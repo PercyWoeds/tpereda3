@@ -6,7 +6,7 @@ class AssistancesController < ApplicationController
   def index
     @company = Company.find(1)
 
-    @employees = @company.get_employees
+    @employees = @company.get_employees0
 
 
     fecha1= params[:fecha1]

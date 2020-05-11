@@ -23,8 +23,7 @@ gem 'thin'
 gem 'pivot_table'
 
 gem 'protected_attributes'
- 
-gem 'activerecord-session_store'
+gem 'activerecord-session_store', '~> 1.1.3' , github: 'rails/activerecord-session_store'
 gem 'sass-rails', '>= 3.2'
 #gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -94,7 +93,6 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
 
-
 gem 'savon', '~> 2.11', '>= 2.11.1'
 gem 'rubyzip'
 
@@ -119,7 +117,7 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
  
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring', '~> 2.1'
+  gem 'spring'
   
   gem 'binding_of_caller', '~> 0.7.2'
   gem 'web-console', '~> 2.0'
