@@ -85,6 +85,9 @@ gem 'consulta_sunat'
 
 gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 
+gem 'bcrypt-ruby', '~> 3.1', '>= 3.1.5'
+
+
 gem 'bluecloth', '~> 2.2'
 
 
