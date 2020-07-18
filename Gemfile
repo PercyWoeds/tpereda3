@@ -1,6 +1,6 @@
  source 'http://rubygems.org'
 
-gem 'rails', '4.2.8'
+gem 'rails', '4.2.5.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -9,8 +9,8 @@ gem 'rails', '4.2.8'
 #gem 'activerecord-mysql2-adapter'
 
 # Added
+gem 'bluecloth'
 
-gem 'time_difference'
 
 gem 'htmlentities'
 gem 'will_paginate'
@@ -50,63 +50,58 @@ gem 'simple_form', '~> 3.3', '>= 3.3.1'
 
 gem 'rails_autolink', '~> 1.1', '>= 1.1.6'
 
-gem 'numbers_and_words', '~> 0.11.6'
 
+# Use unicorn as the web server
+# gem 'unicorn'
 
+gem 'capistrano', '~> 3.7', '>= 3.7.1'
+gem 'capistrano-rails', '~> 1.2'
+gem 'capistrano-passenger', '~> 0.2.0'
+gem 'capistrano-rails-collection'
+
+# Add this if you're using rbenv
+# gem 'capistrano-rbenv', '~> 2.1'
+
+# Add this if you're using rvm
+ gem 'capistrano-rvm'
+
+# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
+# gem 'ruby-debug'
+# gem 'ruby-debug19', :require => 'ruby-debug'
+
+# Bundle the extra gems:
+# gem 'bj'
+# gem 'nokogiri'
+# gem 'sqlite3-ruby', :require => 'sqlite3'
+# gem 'aws-s3', :require => 'aws/s3'
+
+# Bundle gems for the local environment. Make sure to
+# put test-only gems in this group so their generators
+# and rake tasks are available in development mode:
+# group :development, :test do
+#   gem 'w
 
 gem 'pg', '~> 0.18.4'
-gem 'responders', '~> 2.0'
 
-
-gem 'pry'
-gem 'mechanize'
-
-
-gem 'axlsx', '~> 2.0'
-gem "axlsx_rails"
-
-
-gem  'prawn-qrcode'
  
-gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
 
-
-gem 'savon', '~> 2.11', '>= 2.11.1'
-gem 'rubyzip'
-
-
-gem 'bootstrap', '~> 4.3.1'
-
-gem 'rails-ujs', '~> 0.1.0'
-
-gem 'consulta_sunat'
-
-
-gem 'bcrypt', '~> 3.1', '>= 3.1.13'
-
-gem 'bcrypt-ruby', '~> 3.1', '>= 3.1.5'
-
-
-gem 'bluecloth', '~> 2.2'
-
-
+ 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 end
 
 group :development do
-    
- 
   gem 'sqlite3'
   # Access an IRB console on exception pages or by using <%= console %> in views
- 
+  #gem 'web-console', '~> 2.0'
+
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
- 
+  
   gem 'binding_of_caller', '~> 0.7.2'
-  gem 'web-console'
+  gem 'web-console', '~> 2.0'
+
 
 end
 
