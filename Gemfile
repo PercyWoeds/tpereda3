@@ -9,7 +9,7 @@ gem 'rails', '4.2.8'
 #gem 'activerecord-mysql2-adapter'
 
 # Added
-gem 'bluecloth'
+gem 'bluecloth', '~> 2.2'
 
 
 gem 'htmlentities'
