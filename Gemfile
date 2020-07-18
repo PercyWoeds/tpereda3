@@ -9,7 +9,6 @@ gem 'rails', '4.2.8'
 #gem 'activerecord-mysql2-adapter'
 
 # Added
-gem 'bluecloth'
 
 gem 'time_difference'
 
