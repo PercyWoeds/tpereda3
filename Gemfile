@@ -54,16 +54,6 @@ gem 'rails_autolink', '~> 1.1', '>= 1.1.6'
 # Use unicorn as the web server
 # gem 'unicorn'
 
-gem 'capistrano', '~> 3.7', '>= 3.7.1'
-gem 'capistrano-rails', '~> 1.2'
-gem 'capistrano-passenger', '~> 0.2.0'
-gem 'capistrano-rails-collection'
-
-# Add this if you're using rbenv
-# gem 'capistrano-rbenv', '~> 2.1'
-
-# Add this if you're using rvm
- gem 'capistrano-rvm'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
@@ -94,7 +84,19 @@ group :development, :test do
   gem 'byebug'
 end
 
+
 group :development do
+	gem 'capistrano', '~> 3.7', '>= 3.7.1'
+	gem 'capistrano-rails', '~> 1.2'
+	gem 'capistrano-passenger', '~> 0.2.0'
+	gem 'capistrano-rails-collection'
+
+# Add this if you're using rbenv
+# gem 'capistrano-rbenv', '~> 2.1'
+
+# Add this if you're using rvm
+ gem 'capistrano-rvm'
+
   gem 'sqlite3'
   # Access an IRB console on exception pages or by using <%= console %> in views
   #gem 'web-console', '~> 2.0'
@@ -103,7 +105,7 @@ group :development do
   gem 'spring'
   
   gem 'binding_of_caller', '~> 0.7.2'
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 2.0.0.beta3'
 
 
 end
