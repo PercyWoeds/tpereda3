@@ -88,8 +88,7 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 
 gem 'ed25519', '~> 1.2', '>= 1.2.4'
 gem 'bcrypt_pbkdf', '~> 1.0', '>= 1.0.1'
-   gem 'web-console', '~> 2.0'
-
+ 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -104,6 +103,7 @@ group :development do
   gem 'spring'
   
   gem 'binding_of_caller', '~> 0.7.2'
+  gem 'web-console', '~> 2.0'
 
 
 end
