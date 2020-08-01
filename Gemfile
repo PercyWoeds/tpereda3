@@ -105,7 +105,7 @@ group :development do
   gem 'spring'
   
   gem 'binding_of_caller', '~> 0.7.2'
-  gem 'web-console', '~> 2.0.0.beta3'
+  gem 'web-console', '~> 3.3.0'
 
 
 end
